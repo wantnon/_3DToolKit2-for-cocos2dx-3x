@@ -21,4 +21,6 @@ screenshots:
 ![screenshot](https://raw.githubusercontent.com/wantnon2/_3DToolKit2-for-cocos2dx-3x/master/screenshots/demo4.png)   
 
 
-
+----
+qq group: 338565878    
+blog: http://user.qzone.qq.com/350479720/blog/1412344533
