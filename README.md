@@ -1,6 +1,6 @@
 3DToolKit2 for cocos2dx 3.x  
 ===========================  
-i transplant part of c3dEngine2(https://github.com/wantnon2/c3dEngine2) to cocos2dx 3.x for more comfortable and flexible usage.  (also, you can find 3DToolKit2 for cocos2dx 2.x here: https://github.com/wantnon2/3DToolKit-2-for-cocos2dx)   
+i transplant part of c3dEngine2(https://github.com/wantnon2/c3dEngine2) to cocos2dx 3.x for more comfortable and flexible usage -- that is 3DToolKit2 for cocos2dx 3.x . (also, you can find 3DToolKit2 for cocos2dx 2.x here: https://github.com/wantnon2/3DToolKit-2-for-cocos2dx)   
   
 how to run demos:   
 1,download cocos2d-js-v3.1 .   
