@@ -16,41 +16,7 @@ using namespace cocos2d;
 #include "cocos-ext.h"
 using namespace cocos2d::extension;
 #include "c3dToolKit.h"
-class CspriteWithC3DTexture:public CCSprite{
-public:
-    CspriteWithC3DTexture(){
-        m_c3dTextrue=NULL;
-    }
-    virtual~CspriteWithC3DTexture(){
-        if(m_c3dTextrue)m_c3dTextrue->release();
-    }
-    virtual bool init(Cc3dTexture*c3dTexture){
-        this->CCSprite::init();
-        this->setC3DTexture(c3dTexture);
-        this->setTextureRect(CCRect(0,0,c3dTexture->getWidth(),c3dTexture->getHeight()));
-        return true;
-    }
-    
-    
-    virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
-    {
-        // Don't do calculate the culling if the transform was not updated
-        _insideBounds = (flags & FLAGS_TRANSFORM_DIRTY) ? renderer->checkVisibility(transform, _contentSize) : _insideBounds;
-        
-        if(_insideBounds)
-        {
-            _quadCommand.init(_globalZOrder, m_c3dTextrue->getID(), getGLProgramState(), _blendFunc, &_quad, 1, transform);
-            renderer->addCommand(&_quadCommand);
-        }
-    }
-    void setC3DTexture(Cc3dTexture*c3dTexture){
-        assert(c3dTexture);
-        setRCObject(m_c3dTextrue, c3dTexture);
-    }
-protected:
-    Cc3dTexture*m_c3dTextrue;
 
-};
 class CtestLayer : public CCLayer
 {
 public:
@@ -73,6 +39,10 @@ public:
     };
     bool init();
     void update(float dt);
+    void onBeginRenderShadowMap();
+    void onEndRenderShadowMap();
+    cocos2d::CustomCommand _beginRenderShadowMapCommand;
+    cocos2d::CustomCommand _endRenderShadowMapCommand;
 public:
     //touch
     virtual void onTouchesBegan(const std::vector<Touch*>& touches, Event *unused_event);
@@ -103,8 +73,13 @@ public:
     
     Cc3dRenderTexture* m_renderTex;
     
-
     
+public:
+    Cc3dCamera*oldCamera;
+    Cc3dProgram*oldProgramOfActor3D;
+    c3dPassUnifoCallbackPtr oldPassUnifoCallbackPtrOfActor3D;
+    Cc3dProgram*oldProgramOfActor3D2;
+    c3dPassUnifoCallbackPtr oldPassUnifoCallbackPtrOfActor3D2;
     
 };
 

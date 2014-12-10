@@ -159,7 +159,6 @@ void Cc3dNode::visitC3D(Renderer *renderer){
     Cc3dModelMatStack::sharedModelMatStack()->mulMatrix(this->m_mat*SMat);
     
     const Cc3dMatrix4&modelMat=Cc3dModelMatStack::sharedModelMatStack()->getTopMat();
-    const bool isDirectDraw=Cc3dDirector::sharedDirector()->getIsDirectDraw();
     int i = 0;
     if(!_children.empty())
     {
@@ -175,20 +174,14 @@ void Cc3dNode::visitC3D(Renderer *renderer){
                 break;
         }
         // self draw
-        if(isDirectDraw){
-            this->onDraw(Mat4(modelMat.getArray()), 0);
-        }else{
-            this->drawC3D(renderer,modelMat);
-        }
+        this->drawC3D(renderer,modelMat);
+    
         
         for(auto it=_children.cbegin()+i; it != _children.cend(); ++it)
             ((Cc3dNode*)(*it))->visitC3D(renderer);
     }else{
-        if(isDirectDraw){
-            this->onDraw(Mat4(modelMat.getArray()), 0);
-        }else{
-            this->drawC3D(renderer, modelMat);
-        }
+        this->drawC3D(renderer, modelMat);
+        
     }
     
     Cc3dModelMatStack::sharedModelMatStack()->popMatrix();

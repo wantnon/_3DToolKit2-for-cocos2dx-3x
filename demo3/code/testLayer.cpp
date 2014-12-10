@@ -142,7 +142,6 @@ bool CtestLayer::init(){
     
     //m_renderTex
   
-    Cc3dDirector::sharedDirector()->setIsDirectDraw(true);
     m_renderTex=new Cc3dRenderTexture();
     m_renderTex->autorelease();
     m_renderTex->init(512, 512, false, true);
@@ -189,38 +188,50 @@ void CtestLayer::switchProjModeCallBack(Ref *senderz, cocos2d::extension::Contro
             
     }
 }
+void CtestLayer::onBeginRenderShadowMap(){
+    oldCamera=Cc3dDirector::sharedDirector()->getCamera();
+    oldCamera->retain();
+    oldCamera->autorelease();
+    Cc3dDirector::sharedDirector()->setCamera(Cc3dDirector::sharedDirector()->getCameraLightView());
+    oldProgramOfActor3D=m_actor3D->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getProgram();
+    oldProgramOfActor3D->retain();
+    oldProgramOfActor3D->autorelease();
+    oldPassUnifoCallbackPtrOfActor3D=m_actor3D->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getPassUnifoCallback();
+    m_actor3D->setProgram(c3dGetProgram_c3dRenderDepth());
+    m_actor3D->setPassUnifoCallback(passUnifoCallback_renderDepth);
+    oldProgramOfActor3D2=m_actor3D2->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getProgram();
+    oldProgramOfActor3D2->retain();
+    oldProgramOfActor3D2->autorelease();
+    oldPassUnifoCallbackPtrOfActor3D2=m_actor3D2->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getPassUnifoCallback();
+    m_actor3D2->setProgram(c3dGetProgram_c3dRenderDepth());
+    m_actor3D2->setPassUnifoCallback(passUnifoCallback_renderDepth);
+
+}
+void CtestLayer::onEndRenderShadowMap(){
+    Cc3dDirector::sharedDirector()->setCamera(oldCamera);
+    m_actor3D->setProgram(oldProgramOfActor3D);
+    m_actor3D->setPassUnifoCallback(oldPassUnifoCallbackPtrOfActor3D);
+    m_actor3D2->setProgram(oldProgramOfActor3D2);
+    m_actor3D2->setPassUnifoCallback(oldPassUnifoCallbackPtrOfActor3D2);
+
+}
 void CtestLayer::update(float dt){
-    bool oldIsDirectDraw=Cc3dDirector::sharedDirector()->getIsDirectDraw();
-    
+   
     m_renderTex->begin();
     {
-        Cc3dCamera*oldCamera=Cc3dDirector::sharedDirector()->getCamera();
-        oldCamera->retain();
-        oldCamera->autorelease();
-        Cc3dDirector::sharedDirector()->setCamera(Cc3dDirector::sharedDirector()->getCameraLightView());
-        Cc3dProgram*oldProgramOfActor3D=m_actor3D->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getProgram();
-        oldProgramOfActor3D->retain();
-        oldProgramOfActor3D->autorelease();
-        c3dPassUnifoCallbackPtr oldPassUnifoCallbackPtrOfActor3D=m_actor3D->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getPassUnifoCallback();
-        m_actor3D->setProgram(c3dGetProgram_c3dRenderDepth());
-        m_actor3D->setPassUnifoCallback(passUnifoCallback_renderDepth);
-        Cc3dProgram*oldProgramOfActor3D2=m_actor3D2->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getProgram();
-        oldProgramOfActor3D2->retain();
-        oldProgramOfActor3D2->autorelease();
-        c3dPassUnifoCallbackPtr oldPassUnifoCallbackPtrOfActor3D2=m_actor3D2->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->getPassUnifoCallback();
-        m_actor3D2->setProgram(c3dGetProgram_c3dRenderDepth());
-        m_actor3D2->setPassUnifoCallback(passUnifoCallback_renderDepth);
+        _beginRenderShadowMapCommand.init(_globalZOrder);
+        _beginRenderShadowMapCommand.func = CC_CALLBACK_0(CtestLayer::onBeginRenderShadowMap,this);
+        CCDirector::sharedDirector()->getRenderer()->addCommand(&_beginRenderShadowMapCommand);
         
-        m_root3d->cocos2d::Node::visit();
+       m_root3d->cocos2d::Node::visit();
         
-        Cc3dDirector::sharedDirector()->setCamera(oldCamera);
-        m_actor3D->setProgram(oldProgramOfActor3D);
-        m_actor3D->setPassUnifoCallback(oldPassUnifoCallbackPtrOfActor3D);
-        m_actor3D2->setProgram(oldProgramOfActor3D2);
-        m_actor3D2->setPassUnifoCallback(oldPassUnifoCallbackPtrOfActor3D2);
+        _endRenderShadowMapCommand.init(_globalZOrder);
+        _endRenderShadowMapCommand.func = CC_CALLBACK_0(CtestLayer::onEndRenderShadowMap,this);
+        CCDirector::sharedDirector()->getRenderer()->addCommand(&_endRenderShadowMapCommand);
+        
+        
     }
     m_renderTex->end();
-    Cc3dDirector::sharedDirector()->setIsDirectDraw(oldIsDirectDraw);
     
     //debug
     //m_actor3D2->getModel()->getMeshByIndex(0)->getSubMeshByIndex(0)->setTexture(m_renderTex->getFBO()->getDepthTex());

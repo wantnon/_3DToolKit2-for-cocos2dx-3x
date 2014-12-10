@@ -47,9 +47,7 @@ void Cc3dRenderTexture::onEnd(){
     
 }
 void Cc3dRenderTexture::begin(){
-    if(Cc3dDirector::sharedDirector()->getIsDirectDraw()){
-        onBegin();
-    }else{
+
         Director* director = Director::getInstance();
         
         _groupCommand.init(_globalZOrder);
@@ -63,14 +61,12 @@ void Cc3dRenderTexture::begin(){
         
         Director::getInstance()->getRenderer()->addCommand(&_beginCommand);
     
-    }
+    
     
     
 }
 void Cc3dRenderTexture::end(){
-    if(Cc3dDirector::sharedDirector()->getIsDirectDraw()){
-        onEnd();
-    }else{
+
         _endCommand.init(_globalZOrder);
         _endCommand.func = CC_CALLBACK_0(Cc3dRenderTexture::onEnd, this);
         
@@ -80,7 +76,7 @@ void Cc3dRenderTexture::end(){
         renderer->addCommand(&_endCommand);
         renderer->popGroup();
     
-    }
+    
     
     
 }

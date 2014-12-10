@@ -24,6 +24,7 @@ class Cc3dRoot:public Cc3dNode
 {
 public:
     Cc3dRoot(){
+        m_isDoDepthTestOld=false;
     }
     virtual~Cc3dRoot(){
     
@@ -33,8 +34,12 @@ public:
     virtual void visitC3D(Renderer *renderer){assert(false);};
     virtual bool isSceneNodeC3D(){return true;}
     virtual void visit(Renderer *renderer, const Mat4& parentTransform, uint32_t parentFlags);
-    
-
+protected:
+    void onBegin();
+    void onEnd();
+    cocos2d::CustomCommand _beginCommand;
+    cocos2d::CustomCommand _endCommand;
+    GLboolean m_isDoDepthTestOld;
 
 };
 #endif /* defined(__HelloCpp__c3dRoot__) */

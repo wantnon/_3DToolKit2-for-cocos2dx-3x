@@ -22,7 +22,6 @@ public:
         m_cameraLightView=NULL;
         m_lightSource=NULL;
         m_shadowMap=NULL;
-        m_isDirectDraw=false;
     
     }
     virtual ~Cc3dDirector(){
@@ -39,15 +38,12 @@ public:
     void setCamera(Cc3dCamera*camera){setRCObject(m_camera,camera);}
     void setCameraLightView(Cc3dCamera*camera){setRCObject(m_cameraLightView,camera);}
     void setLightSource(Cc3dLightSource*lightSource){setRCObject(m_lightSource,lightSource);}
-    bool getIsDirectDraw()const{return m_isDirectDraw;}
-    void setIsDirectDraw(bool value){m_isDirectDraw=value;}
     void setShadowMap(Cc3dTexture*shadowMap){m_shadowMap=shadowMap;}
     Cc3dTexture*getShadowMap(){return m_shadowMap;}
 protected:
     Cc3dCamera* m_camera;
     Cc3dCamera* m_cameraLightView;
     Cc3dLightSource* m_lightSource;
-    bool m_isDirectDraw;
     Cc3dTexture* m_shadowMap;
 
 };
