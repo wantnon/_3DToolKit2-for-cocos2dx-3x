@@ -8,7 +8,7 @@ void main()
     float zLookup=texture2D(CC_Texture1, vec2(v_lightViewportTexCoordDivW.x,v_lightViewportTexCoordDivW.y) ).z;
     float dz=v_lightViewportTexCoordDivW.z-zLookup;
 
-    float shadowFactor=(max(0.0,dz)>0.00001)?0.6:1.0;//
+    float shadowFactor=(max(0.0,dz)>0.000035)?0.6:1.0;//
     //max(0.6,1.0-max(0.0,dz)*500.0);// the shadow of scene have gradual change, makes more real and natural
     
     vec4 shadowFactorRGBA=vec4(shadowFactor,shadowFactor,shadowFactor,1.0);

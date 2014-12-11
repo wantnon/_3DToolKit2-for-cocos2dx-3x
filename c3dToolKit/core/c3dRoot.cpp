@@ -55,7 +55,7 @@ void Cc3dRoot::visit(Renderer *renderer, const Mat4& parentTransform, uint32_t p
     }
     
     _endCommand.init(_globalZOrder);
-    _endCommand.func = CC_CALLBACK_0(Cc3dRoot::onBegin,this);
+    _endCommand.func = CC_CALLBACK_0(Cc3dRoot::onEnd,this);
     renderer->addCommand(&_endCommand);
     
     
