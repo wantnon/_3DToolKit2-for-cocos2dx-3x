@@ -18,7 +18,7 @@ screenshots:
 
 ![screenshot](https://raw.githubusercontent.com/wantnon2/_3DToolKit2-for-cocos2dx-3x/master/screenshots/demo4.png)   
     
-![screenshot](https://raw.githubusercontent.com/wantnon2/_3DToolKit2-for-cocos2dx-3x/master/screenshots/demo5.png)   
+![screenshot](https://raw.githubusercontent.com/wantnon2/_3DToolKit2-for-cocos2dx-3x/master/screenshots/demo5x.png)   
     
 ----
 qq group: 338565878    
