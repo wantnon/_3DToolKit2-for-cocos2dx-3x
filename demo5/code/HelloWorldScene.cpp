@@ -67,7 +67,7 @@ bool HelloWorld::init()
     
     //demo name
     {
-        CCLabelTTF* pLabel = CCLabelTTF::create("3D ToolKit for cocos2d-x - Test 5", "Arial", 45);
+        CCLabelTTF* pLabel = CCLabelTTF::create("3D ToolKit for cocos2d-x - Test 5 - skin animation", "Arial", 45);
         pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
                                 origin.y + visibleSize.height - pLabel->getContentSize().height));
         this->addChild(pLabel, 1);
