@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A922753C1517C094001B78AA"
-               BuildableName = "demo5 iOS.app"
-               BlueprintName = "demo5 iOS"
-               ReferencedContainer = "container:demo5.xcodeproj">
+               BlueprintIdentifier = "A07A4C241783777C0073F6A7"
+               BuildableName = "libcocos2d iOS.a"
+               BlueprintName = "libcocos2d iOS"
+               ReferencedContainer = "container:cocos2d_libs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,15 +39,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BlueprintIdentifier = "A07A4C241783777C0073F6A7"
+            BuildableName = "libcocos2d iOS.a"
+            BlueprintName = "libcocos2d iOS"
+            ReferencedContainer = "container:cocos2d_libs.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -66,15 +57,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BlueprintIdentifier = "A07A4C241783777C0073F6A7"
+            BuildableName = "libcocos2d iOS.a"
+            BlueprintName = "libcocos2d iOS"
+            ReferencedContainer = "container:cocos2d_libs.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A922753C1517C094001B78AA"
-               BuildableName = "demo5 iOS.app"
-               BlueprintName = "demo5 iOS"
-               ReferencedContainer = "container:demo5.xcodeproj">
+               BuildableName = "demo4 iOS.app"
+               BlueprintName = "demo4 iOS"
+               ReferencedContainer = "container:demo4.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BuildableName = "demo4 iOS.app"
+            BlueprintName = "demo4 iOS"
+            ReferencedContainer = "container:demo4.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BuildableName = "demo4 iOS.app"
+            BlueprintName = "demo4 iOS"
+            ReferencedContainer = "container:demo4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BuildableName = "demo4 iOS.app"
+            BlueprintName = "demo4 iOS"
+            ReferencedContainer = "container:demo4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -63,6 +63,20 @@
 			remoteGlobalIDString = 509D4AAA17EBB24E00697056;
 			remoteInfo = "demo4 Mac";
 		};
+		71D0CFF81A5D37E9006871E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71D0CFF31A5D37E9006871E5 /* demo5.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A922753D1517C094001B78AA;
+			remoteInfo = "demo5 iOS";
+		};
+		71D0CFFA1A5D37E9006871E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71D0CFF31A5D37E9006871E5 /* demo5.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 509D4AAA17EBB24E00697056;
+			remoteInfo = "demo5 Mac";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +86,7 @@
 		187C9B1E1A35CD000015DEC2 /* allDemos iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allDemos iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187C9B1F1A35CD000015DEC2 /* allDemos Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allDemos Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187C9B371A36A6B90015DEC2 /* demo4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = demo4.xcodeproj; path = "../../../../demo4/frameworks/runtime-src/proj.ios_mac/demo4.xcodeproj"; sourceTree = "<group>"; };
+		71D0CFF31A5D37E9006871E5 /* demo5.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = demo5.xcodeproj; path = "../../../../demo5/frameworks/runtime-src/proj.ios_mac/demo5.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +143,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		71D0CFF41A5D37E9006871E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71D0CFF91A5D37E9006871E5 /* demo5 iOS.app */,
+				71D0CFFB1A5D37E9006871E5 /* demo5 Mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A92275321517C094001B78AA = {
 			isa = PBXGroup;
 			children = (
+				71D0CFF31A5D37E9006871E5 /* demo5.xcodeproj */,
 				187C9B371A36A6B90015DEC2 /* demo4.xcodeproj */,
 				187C9B131A35CA4C0015DEC2 /* demo3.xcodeproj */,
 				187C9B081A35C4D30015DEC2 /* demo2.xcodeproj */,
@@ -217,6 +242,10 @@
 					ProductGroup = 187C9B381A36A6B90015DEC2 /* Products */;
 					ProjectRef = 187C9B371A36A6B90015DEC2 /* demo4.xcodeproj */;
 				},
+				{
+					ProductGroup = 71D0CFF41A5D37E9006871E5 /* Products */;
+					ProjectRef = 71D0CFF31A5D37E9006871E5 /* demo5.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -281,6 +310,20 @@
 			fileType = wrapper.application;
 			path = "demo4 Mac.app";
 			remoteRef = 187C9B461A36A6BA0015DEC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		71D0CFF91A5D37E9006871E5 /* demo5 iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "demo5 iOS.app";
+			remoteRef = 71D0CFF81A5D37E9006871E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		71D0CFFB1A5D37E9006871E5 /* demo5 Mac.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "demo5 Mac.app";
+			remoteRef = 71D0CFFA1A5D37E9006871E5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

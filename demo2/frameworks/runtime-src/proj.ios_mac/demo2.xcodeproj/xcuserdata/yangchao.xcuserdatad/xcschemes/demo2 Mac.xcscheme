@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A922753C1517C094001B78AA"
-               BuildableName = "demo5 iOS.app"
-               BlueprintName = "demo5 iOS"
-               ReferencedContainer = "container:demo5.xcodeproj">
+               BlueprintIdentifier = "509D4A7517EBB24E00697056"
+               BuildableName = "demo2 Mac.app"
+               BlueprintName = "demo2 Mac"
+               ReferencedContainer = "container:demo2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BlueprintIdentifier = "509D4A7517EBB24E00697056"
+            BuildableName = "demo2 Mac.app"
+            BlueprintName = "demo2 Mac"
+            ReferencedContainer = "container:demo2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BlueprintIdentifier = "509D4A7517EBB24E00697056"
+            BuildableName = "demo2 Mac.app"
+            BlueprintName = "demo2 Mac"
+            ReferencedContainer = "container:demo2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A922753C1517C094001B78AA"
-            BuildableName = "demo5 iOS.app"
-            BlueprintName = "demo5 iOS"
-            ReferencedContainer = "container:demo5.xcodeproj">
+            BlueprintIdentifier = "509D4A7517EBB24E00697056"
+            BuildableName = "demo2 Mac.app"
+            BlueprintName = "demo2 Mac"
+            ReferencedContainer = "container:demo2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
