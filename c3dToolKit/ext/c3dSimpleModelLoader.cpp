@@ -7,6 +7,7 @@
 //
 
 #include "c3dSimpleModelLoader.h"
+#include "c3dScanf.h"
 Cc3dActor* c3dSimpleLoadActor(string path){
     //----Cc3dSkinActor.txt
     Cc3dActor*actor=new Cc3dActor();

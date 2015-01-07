@@ -38,6 +38,8 @@ public:
         m_isDoDepthTest=true;
         m_blendFunc.src=C3D_BLEND_SRC;
         m_blendFunc.dst=C3D_BLEND_DST;
+        
+        init_dft();
     }
 	virtual ~Cc3dSubMesh(){
         if(m_texture)m_texture->release();
@@ -66,6 +68,13 @@ public:
     void setIsDoDepthTest(bool isDoDepthTest);
     void setBlendFunc(ccBlendFunc blendFunc){m_blendFunc = blendFunc;}
     ccBlendFunc getBlendFunc(){return m_blendFunc;}
+    
+    Cc3dVertex getVertexByIndex(int index){return m_subMeshData->getVertexByIndex(index);}
+    void setVertexByIndex(int index,const Cc3dVertex&vertex){m_subMeshData->setVertexByIndex(index,vertex);}
+    Cc3dIDTriangle getIDtriByIndex(int index){return m_subMeshData->getIDtriByIndex(index);}
+protected:
+    void init_dft();
+
 protected:
     Cc3dTexture* m_texture;
     Cc3dMaterial* m_material;

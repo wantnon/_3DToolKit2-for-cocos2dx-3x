@@ -9,9 +9,12 @@
 #include "c3dSubMesh.h"
 #include "c3dDirector.h"
 bool Cc3dSubMesh::init(){
-    this->setAnchorPoint(ccp(0,0));
     //call parent init
     Cc3dNode::init();
+    return true;
+}
+void Cc3dSubMesh::init_dft(){
+    this->setAnchorPoint(ccp(0,0));
     //texture
     Cc3dTexture*texture=Cc3dTextureCache::sharedTextureCache()->addImage("toolKitRes/pic/defaultTexPic.png",GL_CLAMP_TO_EDGE,GL_CLAMP_TO_EDGE);
     setTexture(texture);
@@ -35,7 +38,8 @@ bool Cc3dSubMesh::init(){
     indexVBO->autorelease();
     indexVBO->init();
     setIndexVBO(indexVBO);
-    return true;
+
+
 }
 void Cc3dSubMesh::setTexture(Cc3dTexture*texture){
     assert(texture);

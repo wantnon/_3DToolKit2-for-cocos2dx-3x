@@ -15,6 +15,7 @@
 #include "c3dDefaultPassUniformCallback.h"
 #include "c3dLightSource.h"
 #include "c3dSimpleModelLoader.h"
+#include "c3dSkinActor.h"
 #include "c3dRenderTexture.h"
 #include "c3dDirector.h"
 #endif
