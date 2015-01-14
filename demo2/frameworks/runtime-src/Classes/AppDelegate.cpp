@@ -52,8 +52,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     // initialize director
     auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
+    auto size = glview->getVisibleSize();
 	if(!glview) {
-        glview = cocos2d::GLViewImpl::createWithRect("HelloWorld", Rect(0,0,1136,640));//Rect(0,0,900,640));
+        glview = cocos2d::GLViewImpl::createWithRect("HelloWorld", Rect(0,0,size.width,size.height));//Rect(0,0,900,640));
 		director->setOpenGLView(glview);
 	}
 
@@ -94,7 +95,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 //    ScriptEngineProtocol *engine = ScriptingCore::getInstance();
 //	ScriptEngineManager::getInstance()->setScriptEngine(engine);
 //	ScriptingCore::getInstance()->runScript("main.js");
-    glview->setDesignResolutionSize(1136, 640,/* kResolutionNoBorder*/kResolutionShowAll);
+    glview->setDesignResolutionSize(size.width , size.height,/* kResolutionNoBorder*/kResolutionShowAll);
 
     director->runWithScene(HelloWorld::scene());
     return true;
