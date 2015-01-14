@@ -52,7 +52,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     // initialize director
     auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32||CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+    auto size = CCSize(1136,640);
+#elif
     auto size = glview->getVisibleSize();
+#endif
 	if(!glview) {
         glview = cocos2d::GLViewImpl::createWithRect("HelloWorld", Rect(0,0,size.width,size.height));//Rect(0,0,900,640));
 		director->setOpenGLView(glview);
