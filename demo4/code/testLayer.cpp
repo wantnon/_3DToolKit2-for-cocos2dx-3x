@@ -217,7 +217,10 @@ void CtestLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *unuse
         m_mosPos=pointInWinSpace;
         //-------
         CCRect viewportRect=Director::getInstance()->getOpenGLView()->getViewPortRect();
-        float viewport[4]={viewportRect.getMinX(),viewportRect.getMinY(),viewportRect.size.width,viewportRect.size.height};
+        //     float viewport[4]={viewportRect.getMinX(),viewportRect.getMinY(),viewportRect.size.width,viewportRect.size.height};
+        CCSize winSize=CCDirector::sharedDirector()->getWinSize();
+        float viewport[4]={0,0,winSize.width,winSize.height};//must use design size, do not use viewport size
+      
         
         Cc3dCamera*camera=Cc3dDirector::sharedDirector()->getCamera();
         Cc3dVector4 eyePos=camera->getEyePos();
