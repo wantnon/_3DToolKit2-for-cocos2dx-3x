@@ -57,8 +57,8 @@ bool CtestLayer::init(){
     material->setSpecular(cc3dv4(0.5, 0.5, 0.5, 1));
     material->setShininess(10);
     //texture
-    Cc3dTexture*tex_logo=Cc3dTextureCache::sharedTextureCache()->addImage("logo.png");
-    Cc3dTexture*tex_logo2=Cc3dTextureCache::sharedTextureCache()->addImage("logo2.png");
+    Cc3dTexture*tex_logo=Cc3dTextureCache::sharedTextureCache()->addImage("logo.png",GL_CLAMP_TO_EDGE,GL_CLAMP_TO_EDGE);
+    Cc3dTexture*tex_logo2=Cc3dTextureCache::sharedTextureCache()->addImage("logo2.png",GL_CLAMP_TO_EDGE,GL_CLAMP_TO_EDGE);
 
     //mesh
     Cc3dMesh*mesh_ball=c3dCreateBallMesh(100, 20, 10, cc3dv4(1, 0.5, 0, 1), cc3dv4(0, 1, 0, 1));

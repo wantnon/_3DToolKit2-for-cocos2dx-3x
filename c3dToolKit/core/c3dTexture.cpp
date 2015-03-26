@@ -76,6 +76,9 @@ bool Cc3dTexture::init(const string&filePath,int wrapS,int wrapT,GLint minFilter
             m_cctex2d = new (std::nothrow) Texture2D();
             m_cctex2d->autorelease();
             m_cctex2d->initWithImage(image);
+            cocos2d::Texture2D::TexParams texParams={static_cast<GLuint>(minFilter),static_cast<GLuint>(magFilter),
+                static_cast<GLuint>(wrapS),static_cast<GLuint>(wrapT)};
+            m_cctex2d->setTexParameters(texParams);
             m_cctex2d->retain();
         } while (0);
         
