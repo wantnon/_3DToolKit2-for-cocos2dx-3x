@@ -35,12 +35,18 @@ public:
     }
     ~Cc3dTexture(){
         if(m_cctex2d){
-            m_cctex2d->release();
-        }
-        if(m_texture!=0
-           &&m_texture!=m_cctex2d->getName()//m_texture is not ref m_cctex2d
-           ){
-            glDeleteTextures(1, &m_texture);
+            assert(m_cctex2d->getName()!=0);
+            if(m_cctex2d->getName()==m_texture){//m_texture ref m_cctex2d
+                m_cctex2d->release();
+            }else{
+                assert(false);
+            }
+        }else{//m_cctex2d==NULL
+            if(m_texture!=0){
+                glDeleteTextures(1, &m_texture);
+            }else{
+                assert(false);
+            }
         }
     }
     bool getIsInvalid()const {
