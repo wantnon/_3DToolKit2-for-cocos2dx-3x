@@ -33,6 +33,9 @@ Cc3dMatrix4 Cc3dNode::nodeToWorldTransformC3D()
 {
     Cc3dMatrix4 thisSMat=calculateScaleMatrix(m_kx, m_ky, m_kz);
     Cc3dMatrix4 t = this->m_mat*thisSMat;
+    if(this->isSceneNodeC3D()){
+        return t;
+    }
     for (Cc3dNode *p = (Cc3dNode*)this->getParent(); p != NULL; p = (Cc3dNode*)p->getParent()){
         t = p->nodeToParentTransformC3D()*t;
         if(p->isSceneNodeC3D())break;//seneNode's matrix already count in
